@@ -10,7 +10,7 @@ public class LoginSteps {
     LoginPage loginPage;
 
     @Given("user is on login page")
-    public void user_is_on_login_page() {
+    public void user_is_on_login_page() throws InterruptedException {
         // Handled in BaseTest setup
         loginPage = new LoginPage();
     }

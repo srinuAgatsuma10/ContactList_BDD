@@ -2,7 +2,7 @@
 <extentreports>
     <configuration>
         <theme>dark</theme>
-        <documentTitle>Cucumber Automation Report</documentTitle>
+        <documentTitle>ContactList Automation Report</documentTitle>
         <reportName>BDD Test Execution Report</reportName>
         <timeStampFormat>dd-MM-yyyy HH:mm:ss</timeStampFormat>
     </configuration>
