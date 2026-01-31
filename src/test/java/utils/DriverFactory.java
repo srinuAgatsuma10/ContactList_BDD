@@ -9,16 +9,35 @@ public class DriverFactory {
 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    public static void initDriver(String browser) {
+    public static void initDriver() {
 
-        if (browser.equalsIgnoreCase("chrome")) {
-            driver.set(new ChromeDriver());
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            driver.set(new FirefoxDriver());
-        } else if (browser.equalsIgnoreCase("edge")) {
-            driver.set(new EdgeDriver());
-        } else {
-            throw new RuntimeException("Browser not supported: " + browser);
+//        if (browser.equalsIgnoreCase("chrome")) {
+//            driver.set(new ChromeDriver());
+//        } else if (browser.equalsIgnoreCase("firefox")) {
+//            driver.set(new FirefoxDriver());
+//        } else if (browser.equalsIgnoreCase("edge")) {
+//            driver.set(new EdgeDriver());
+//        } else {
+//            throw new RuntimeException("Browser not supported: " + browser);
+//        }
+//
+//        getDriver().manage().window().maximize();
+
+        String browser = System.getProperty("browser", "edge").toLowerCase();
+
+        switch (browser) {
+            case "firefox":
+                driver.set(new FirefoxDriver());
+                break;
+
+            case "edge":
+                driver.set(new EdgeDriver());
+                break;
+
+            case "chrome":
+            default:
+                driver.set(new ChromeDriver());
+                break;
         }
 
         getDriver().manage().window().maximize();
