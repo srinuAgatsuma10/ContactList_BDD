@@ -34,4 +34,15 @@ public class LoginPage extends BasePage {
     public void clickSingnUpButton() {
         signUpBUtton.click();
     }
+
+    /* For Data Driven Test*/
+    public WebElement getEmailField() {
+        return emailField;
+    }
+    public WebElement getPasswordField() {
+        return passwordField;
+    }
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
 }

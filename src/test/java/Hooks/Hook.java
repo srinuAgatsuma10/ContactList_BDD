@@ -10,7 +10,7 @@ public class Hook {
     @Before
     public void setUp() {
         System.out.println(">>> Hooks Before executed");
-        String browser = ConfigReader.getProperty("browser");
+//        String browser = ConfigReader.getProperty("browser");
         DriverFactory.initDriver();
         DriverFactory.getDriver().get(ConfigReader.getProperty("url"));
     }

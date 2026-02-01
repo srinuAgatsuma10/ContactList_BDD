@@ -23,9 +23,10 @@ public class DriverFactory {
                 break;
 
             case "chrome":
-            default:
                 driver.set(new ChromeDriver());
                 break;
+            default:
+                System.out.println("No browser found");
         }
 
         getDriver().manage().window().maximize();
