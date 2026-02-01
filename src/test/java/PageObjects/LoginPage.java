@@ -1,23 +1,37 @@
 package PageObjects;
 
-import BaseTest.BasePage;
-import org.openqa.selenium.By;
+import BasePageTest.BasePage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-    private By emailField = By.id("email");
-    private By passwordField = By.id("password");
-    private By loginButton = By.xpath("//button[@id='submit']");
-    private By contactList = By.xpath("//h1[normalize-space()='Contact List']");
+    @FindBy(xpath = "//input[@id='email']" )
+    WebElement emailField;
 
-    public void login(String email, String password) throws InterruptedException {
-        type(emailField, email);
-        type(passwordField, password);
-        click(loginButton);
-        Thread.sleep(3000);
+    @FindBy(xpath = "//input[@id='password']")
+    WebElement passwordField;
+
+    @FindBy(xpath = "//button[@id='submit']")
+    WebElement loginButton;
+
+    @FindBy(xpath = "//button[@id='signup']")
+    WebElement signUpBUtton;
+
+
+    public void enterEmail(String email){
+        emailField.sendKeys(email);
     }
 
-    public boolean isContactListDisplayed() {
-        return driver().findElement(contactList).isDisplayed();
+    public void enterPassword(String pass){
+        passwordField.sendKeys(pass);
+    }
+
+    public void clickSubmit(){
+        loginButton.click();
+    }
+
+    public void clickSingnUpButton() {
+        signUpBUtton.click();
     }
 }

@@ -17,8 +17,8 @@ import org.testng.annotations.Parameters;
                 "html:target/cucumber-reports.html",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        monochrome = true
-//        tags = "@Smoke"
+        monochrome = true,
+        tags = "@Regression"
 )
 public class Runner extends AbstractTestNGCucumberTests {
         @BeforeClass(alwaysRun = true)

@@ -1,4 +1,4 @@
-@Smoke @Regression @Authentication
+@Smoke
 Feature: Login functionality
 
   Scenario: Verify user can login with valid credentials
