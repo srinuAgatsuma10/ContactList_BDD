@@ -7,7 +7,6 @@ public class ConfigReader {
 
     private static Properties properties;
 
-    // Static block -> loads once when class is used
     static {
         try {
             FileInputStream fis = new FileInputStream(

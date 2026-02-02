@@ -11,6 +11,10 @@ public class DriverFactory {
 
     public static void initDriver() {
 
+        if (driver.get() != null) {
+            return;     // avoid creating multiple drivers for same thread
+        }
+
         String browser = System.getProperty("browser", "chrome").toLowerCase();
 
         switch (browser) {

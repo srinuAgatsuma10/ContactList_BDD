@@ -18,4 +18,11 @@
         </classes>
     </test>
 
+    <test name="Regression Tests - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="cucumber.filter.tags" value="@DataDriven"/>
+        <classes>
+            <class name="TestRunner.Runner"/>
+        </classes>
+    </test>
 </suite>
