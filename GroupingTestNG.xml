@@ -18,7 +18,7 @@
         </classes>
     </test>
 
-    <test name="Regression Tests - Chrome">
+    <test name="Data Driven - Chrome">
         <parameter name="browser" value="chrome"/>
         <parameter name="cucumber.filter.tags" value="@DataDriven"/>
         <classes>
