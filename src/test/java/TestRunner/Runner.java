@@ -15,7 +15,7 @@ import org.testng.annotations.*;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
-        tags = "@DataDrivenTwo"
+        tags = "@SecurityTest"
 )
 public class Runner extends AbstractTestNGCucumberTests {
         @Override

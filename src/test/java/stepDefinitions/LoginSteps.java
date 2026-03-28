@@ -5,15 +5,18 @@ import io.cucumber.java.en.*;
 import org.testng.Assert;
 import PageObjects.LoginPage;
 import utils.ConfigReader;
+import utils.ScreenShot_Utils;
 
 public class LoginSteps {
 
     LoginPage loginPage;
     ContactListPage contactListPage;
+    ScreenShot_Utils ss;
 
     public LoginSteps() {
         loginPage = new LoginPage();
         contactListPage = new ContactListPage();
+        ss = new ScreenShot_Utils();
     }
 
 
@@ -31,8 +34,8 @@ public class LoginSteps {
     }
 
     @Then("user should be logged in successfully")
-    public void user_should_be_logged_in_successfully() {
+    public void user_should_be_logged_in_successfully()throws Exception {
         Assert.assertTrue(contactListPage.isContactListDisplayed(),
-                "Login failed - ContactList Logo is not visible");
+                "Login failed - ContactList Logo is not visible" + ss.captureScreen("Login Failed"));
     }
 }
